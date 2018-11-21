@@ -8,11 +8,20 @@
         <div class="header">
             <h1>Home Page</h1>
         </div>
-        <p>
-            <a href="login.php">Log Out</a>
-        </p>
+        <button onclick="Logout()">Logout</button>
+        <script>
+            function Logout() 
+            {
+             window.location.href="login.php";
+            }
+        </script>
+        
         <p>
             <a href="createPost.php">post a post </a>
+        </p>
+
+        <p>
+            <a href="settings.php">Settings</a>
         </p>
     </body>
 </html>

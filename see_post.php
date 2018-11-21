@@ -6,12 +6,18 @@
 <!DOCTYPE html>
     <html>
     <head>
-
+    <button onclick="Logout()">Logout</button>
+        <script>
+            function Logout() 
+            {
+             window.location.href="login.php";
+            }
+        </script>
  <button onclick="goHome()">Home</button>
         <script>
             function goHome() 
             {
-             window.history.go(-2);
+             window.location.href="home.php";
             }
         </script>
     <button onclick="goBack()">Go Back</button>
