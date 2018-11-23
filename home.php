@@ -1,7 +1,17 @@
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Register</title>
+    <style>
+        div.a {
+            text-indent: 45%;
+                }   
+    </style>
+
+
+        <title>Home Page</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -11,14 +21,18 @@
         <button onclick="Logout()">Logout</button>
         <script>
             function Logout() 
-            {
+            {   
              window.location.href="login.php";
             }
         </script>
-        
+        <div class = "a" >
         <p>
-            <a href="createPost.php">post a post </a>
+            <a href="createPost.php">Create Post!</a>
         </p>
+        <p>
+            <a href="pages_html.php">See Pages</a>
+        </p>
+        </div>
 
         <p>
             <a href="settings.php">Settings</a>

@@ -1,6 +1,15 @@
+
+
+
 <!DOCTYPE html>
     <html>
         <head>
+        <style>
+        div.a {
+            text-indent: 45%;
+                }   
+        </style>
+
         <button onclick="Logout()">Logout</button>
         <script>
             function Logout() 
@@ -42,11 +51,25 @@
                     ?>
                     <p>Email</p>
                 </div>
+
+
+                <!-- upload pictures to profile -->
+
                 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
                 <input type = "file" name = "file">
                 <button type = "submit" name = "submit" >Upload profile image</button>
                 
                 </form>
+
+                <div class = "a">
+                <h1>Admin</h1>
+                </div>
+                <div>
+                <form action = "admin_php.php" method = "POST" >
+                <button type = "submit" name = "admin" >Admin Settings</button>
+
+
+                </div>
             
             
             
