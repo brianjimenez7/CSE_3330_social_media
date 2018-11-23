@@ -24,36 +24,32 @@
         </script>
 
 
-        <title>Pages</title>
+        <title>Create a Page</title>
         <link rel="stylesheet" type="text/css" href="style.css">
 
         </head>
 
             <body>
                  <div class="header">
-                    <h1>Pages</h1>
+                    <h1>Create a Page</h1>
                 </div>
-                <div> 
-                    <h1>Here you will see your pages and list them</h1>
-                    <ul>
-                        <li>thesitewizard.com</li>
-                        <li>thefreecountry.com</li>
-                        <li>howtohaven.com</li>
-                    </ul>
-                </div>
-                </form>
-         <form method="post" action="create_page_html.php">   
-             <div class="input-group">
-                <label>Create Page..</label>
-                <input type="text" name="Page_name">
-            </div> 
-        <div class="input-group">
-                <button type="submit" name="Page_name" class="btn">Enter Page name</button>
-        </div>
-        </form> 
-                
-             
+
+                 <form method="post" action="create_page_php.php">
+            <div class="input-group">
+                <label>Description</label>
+                <input type="text" name="description">
+            </div>
+            <div class="input-group">
+                <label>Category</label>
+                <input type="text" name="category">
+            </div>
             
+            <div class="input-group">
+                <button type="submit" name="register" class="btn">Register</button>
+            </div>
+        </form>
+                
+        
             
             </body>
 
