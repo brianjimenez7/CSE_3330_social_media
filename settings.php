@@ -7,12 +7,15 @@
         <style>
         div.a {
             text-indent: 45%;
+            color: blue;
                 }  
         div.b {
             text-indent: 40%;
+            color: red;
                 } 
                 div.c {
             text-indent: 35%;
+            color: blue:
                 } 
         </style>
 
@@ -84,7 +87,9 @@
                        
                         if( $Pro_image[0] == null )
                         {
-                            echo "it is null";
+                           
+                            // echo  '<div class="b"> <p>No Profile pick. Go to settings to upload! </p></div>';
+                            echo '<div class="c"> <p>Upload your Profile picture here!!</p></div>';
                         }
                         else
                         {

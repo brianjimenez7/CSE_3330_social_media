@@ -50,5 +50,5 @@
             mysqli_query($conn,$sql);
         }
     }
-   // $conn->close();
+    $conn->close();
 ?>
