@@ -8,11 +8,12 @@
     $dob="";
     $gender="";
     //here will first connect to the database
-    $database = "SocialMedia";
-    $servername = "localhost";
-    $usersname = "root";
-    $password = "root";
-    $conn = mysqli_connect($servername, $usersname, $password, $database);
+    // $database = "SocialMedia";
+    // $servername = "localhost";
+    // $usersname = "root";
+    // $password = "root";
+    // $conn = mysqli_connect($servername, $usersname, $password, $database);
+    include_once 'dbh.php';
 
     //now here if the registration button is clicked
     if(isset($_POST['register'])){
@@ -49,5 +50,5 @@
             mysqli_query($conn,$sql);
         }
     }
-    $conn->close();
+   // $conn->close();
 ?>

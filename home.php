@@ -29,13 +29,31 @@
         <p>
             <a href="createPost.php">Create Post!</a>
         </p>
-        <p>
-            <a href="pages_html.php">See Pages</a>
-        </p>
+        
         </div>
 
         <p>
             <a href="settings.php">Settings</a>
         </p>
+
+        <?php 
+                        session_start();
+                        include_once 'dbh.php';
+
+
+                        $user=$_SESSION['userName'];
+                        $email=$_SESSION['email'];
+                        echo "Username: " . $user . "<br>";
+                        
+                        
+
+                        $mysql_query = "SELECT email FROM Profile where Username='$user'";
+                        $result = mysqli_query($conn, $mysql_query);
+                        $email=mysqli_fetch_array($result);
+                        echo "Email: " . $email[0] . "<br>";
+                        
+                    ?>
+
+        
     </body>
 </html>

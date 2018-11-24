@@ -1,10 +1,11 @@
 <?php
     session_start();
-    $database = "SocialMedia";
-    $servername = "localhost";
-    $dataname = "root";
-    $pass = "root";
-    $conn = new mysqli($servername, $dataname, $pass, $database);
+    // $database = "SocialMedia";
+    // $servername = "localhost";
+    // $dataname = "root";
+    // $pass = "root";
+    // $conn = new mysqli($servername, $dataname, $pass, $database);
+    include_once 'dbh.php';
     $username= $_POST["username_1"];
     $password= $_POST["password_3"];
     // Check connection
@@ -39,5 +40,5 @@
             }
         }
     }
-    $conn->close();
+   // $conn->close();
 ?>
