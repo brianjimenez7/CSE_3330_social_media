@@ -15,9 +15,18 @@
              window.location.href="login.php";
             }
         </script>
+        <p>
+            <a href="createPage.php">Create a page</a>
+        </p>
+        <p>
+            <a href="ViewOwnPages.php">View Own Pages</a>
+        </p>
+        <p>
+            <a href="ViewAPage.php">View a page</a>
+        </p>
         
         <p>
-            <a href="createPost.php">post a post </a>
+            <a href="createPost.php">Post a post </a>
         </p>
 
         <p>
