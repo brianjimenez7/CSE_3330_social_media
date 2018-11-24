@@ -27,11 +27,13 @@
             $itemList = mysqli_fetch_array($result_2);
             $temp= "".$itemList["Password"]."";
             $temp_username="".$itemList["Username"]."";
+            $Profile_id="".$itemList["Profile_ID"]."";
             //if the passwrods match then will go to the home page
             //also make sure the usernam is good 
             if(($temp_username==$username)&&($temp==$password))
             {
                 $_SESSION['userName']=$username;
+                $_SESSION['Profile_id']=$Profile_id;
                 header("Location: home.php");
 
             }
