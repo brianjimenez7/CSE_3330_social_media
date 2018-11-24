@@ -1,7 +1,9 @@
 <?php 
 
-$conn = mysqli_connectt("localhost" , "root", "root", "SocialMedia");
-
+$conn = mysqli_connect("localhost" , "root", "root", "SocialMedia");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 
 ?>

@@ -1,11 +1,12 @@
 
 <?php
 session_start();
-$database = "SocialMedia";
-$servername = "localhost";
-$dataname = "root";
-$pass = "root";
-$conn = new mysqli($servername, $dataname, $pass, $database);
+include_once 'dbh.php';
+// $database = "SocialMedia";
+// $servername = "localhost";
+// $dataname = "root";
+// $pass = "root";
+// $conn = new mysqli($servername, $dataname, $pass, $database);
 $email= $_POST["email"];
 $username= $_POST["username"];
 $password_1 = $_POST["password_1"];
@@ -25,7 +26,7 @@ else{
     if($password_1==$password_2)
     {
         //now have to make sure that the email and the username is not occupied
-        $sql_1= "SELECT * FROM Profile where Fname='$username'"; 
+        $sql_1= "SELECT * FROM Profile where Username='$username'"; 
         $result = mysqli_query($conn, $sql_1);
         $row=mysqli_fetch_array($result);
         //will go back if the username is not unique
@@ -57,5 +58,5 @@ else{
     }
 
 }
-$conn->close();
+//$conn->close();
 ?>
