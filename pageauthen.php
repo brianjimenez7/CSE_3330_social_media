@@ -30,9 +30,9 @@ else{
     //now will insert to database the page info given by the user
     $sql = "INSERT into Pages (Page_Name,Description,Category,Admin_ID) VALUES ('$pageName','$pageDescription','$pageCategory','$profile_id')" ;
     if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-    echo "<br>";
-    //header("Location: login.php");
+    // echo "New record created successfully";
+    // echo "<br>";
+    header("Location: home.php");
     } 
     else {
     //echo "Error: " . $list . "<br>" . $conn->error;
