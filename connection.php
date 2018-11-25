@@ -18,4 +18,4 @@ if ($conn->query($list) === TRUE) {
 } else {
     echo "Error: " . $list . "<br>" . $conn->error;
 }
-$conn->close();
+mysqli_close($conn);

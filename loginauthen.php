@@ -14,6 +14,7 @@
     }
     //here will now go check if the passsword and username are correct 
     else{
+        
         $sql_1= "SELECT * FROM Profile where Username='$username'"; 
         $result = mysqli_query($conn, $sql_1);
         $row=mysqli_fetch_array($result);
