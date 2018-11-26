@@ -41,14 +41,6 @@ else if( ($is_text != null) || ($is_image != null))
        
         }
 
-        //    $mysql_query1 = ("UPDATE Post SET is_text = '$is_text'");
-        //    $result1 = mysqli_query($conn, $mysql_query1);
-        //    $row=mysqli_fetch_array($result1);
-          
-        
-    
-        
-        // header("Location: see_post.php");
     }
     else if ( $is_image != null )
     {
