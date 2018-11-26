@@ -7,6 +7,16 @@
 <!DOCTYPE html>
     <html>
     <head>
+
+
+    <style>
+        div.a {
+            text-indent: 45%;
+                }   
+    </style>
+
+
+
     <button onclick="Logout()">Logout</button>
         <script>
             function Logout() 
@@ -61,14 +71,14 @@
                     
                    echo '<form method="post" action="pageinfo.php">
                    <div class="input-group">
-                   <h3>Post:</h3>
+                   <h3>Text Post:</h3>
                    <label>
                     '.$row['is_text'].'
                    </label>
                    </div>' ;
                    echo '<div class="input-group">
-                   <h3>Date:</h3>
                    <label>
+                   Date: 
                     '.$row['Created_post'].'
                    </label>
                    </div>
@@ -82,7 +92,7 @@
             }
         
 
-
+                echo '<div class = "a"><h3> Images</h3></div></div>';
 
             $sql1 = "SELECT is_Audio, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
             $result2 = mysqli_query($conn, $sql1);
@@ -100,15 +110,15 @@
                    if( $row['is_Audio'] != null )
                    {
 
-                   echo '<form method="post" action="pageinfo.php">
+                   echo '<form method="post" >
                    <div class="input-group">
                    <h3>Image Post:</h3>
                    <label> <img src="'.$row['is_Audio'].'" width="300" height="250" />
                    </label></div>';
 
-                   echo '<div class="input-group">
-                   <h3>Date:</h3>
+                   echo '
                    <label>
+                   Date:
                     '.$row['Created_post'].'
                    </label>
                    </div>
