@@ -38,7 +38,7 @@
         <div class="header">
             <h1>Your post</h1>
         </div>
-        <p>You have posted</p>
+       
 
         <?php
              $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
@@ -52,16 +52,31 @@
              if (mysqli_num_rows($result1) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result1)) {
-                    echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
+                   // echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
+
+                   echo '<form method="post" action="pageinfo.php">
+                   <div class="input-group">
+                   <h3>Post:</h3>
+                   <label>
+                    '.$row['is_text'].'
+                   </label>
+                   </div>' ;
+                   echo '<div class="input-group">
+                   <h3>Date:</h3>
+                   <label>
+                    '.$row['Created_post'].'
+                   </label>
+                   </div>
+                   </form>' ;
+
                 }
             } else {
                 echo "0 results";
             }
               
         ?>
-       
-
-
+      
+     
 
 
 

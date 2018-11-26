@@ -71,8 +71,9 @@
         <p>
         <a href="UpdatePage.php">Update your page</a>
         </p>
-
-
+        <p>
+            <a href="see_post.php">See your post</a>
+        </p>
         <p>
 
             <a href="createPost.php">Create Post!</a>
@@ -83,6 +84,7 @@
         <p>
             <a href="settings.php">Settings</a>
         </p>
+       
 
         <?php 
                         session_start();
