@@ -13,7 +13,7 @@ $id=mysqli_fetch_array($result);
 
 if (isset($_POST['submit']))
 {
-    $file = $_FILES['fire'];
+    $file = $_FILES['file'];
 
 
     $fileName = $_FILES['file']['name'];
@@ -33,18 +33,18 @@ if (isset($_POST['submit']))
         {
             if($fileSize < 10000000)
             {
-                $fileNameNew = "profile". $id[0].  ".".$fileActualExt;
+                $fileNameNew = uniqid('', true).  ".".$fileActualExt;
                 $fileDestination = 'Upload/' .$fileNameNew;
 
                 move_uploaded_file($fileTmpName, $fileDestination);
                 
            
-             
-           $mysql_query = ("UPDATE Profile SET Profile_Images = '$fileDestination' WHERE Profile_ID = $id[0]");
+            
+           $mysql_query = "INSERT INTO Post(Is_Audio, Profile_ID) VALUES('$fileDestination','$id[0]')";
            $result = mysqli_query($conn, $mysql_query);
            $row=mysqli_fetch_array($result);
            
-           header("Location: settings.php?uploadsuccess");
+           header("Location: see_post.php");
             
             }
             else
