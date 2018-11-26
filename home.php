@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -70,6 +67,12 @@
         <p>
             <a href="ViewAPage.php">View a page</a>
         </p>
+
+        <p>
+        <a href="UpdatePage.php">Update your page</a>
+        </p>
+
+
         <p>
 
             <a href="createPost.php">Create Post!</a>
