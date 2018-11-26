@@ -83,7 +83,7 @@
                         $mysql_query = "SELECT Profile_Images FROM Profile where Username='$user'";
                         $result = mysqli_query($conn, $mysql_query);
                         $Pro_image=mysqli_fetch_array($result);
-                        echo "pro image: " . $Pro_image[0] . "<br>";
+                       // echo "pro image: " . $Pro_image[0] . "<br>";
                        
                         if( $Pro_image[0] == null )
                         {
