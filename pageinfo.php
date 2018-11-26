@@ -21,14 +21,14 @@
         $Description=$row['Description'];
         $CreateDate=$row['CreateDate'];
         //go to the next page to display
-        // echo $CreateDate;
-        // echo "<br>";
-        // echo $Description;
-        // echo "<br>";
-        // echo $PageName;
-        // echo "<br>";
-        // echo $Category;
-        // echo "<br>";
+        echo $CreateDate;
+        echo "<br>";
+        echo $Description;
+        echo "<br>";
+        echo $PageName;
+        echo "<br>";
+        echo $Category;
+        echo "<br>";
     }
     
 ?>
