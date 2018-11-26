@@ -18,10 +18,10 @@
         //$sql = "INSERT into Pages (Page_Name,Description,Category,Admin_ID) VALUES ('$pageName','$pageDescription','$pageCategory','$profile_id')" ;
         $result = $conn->query($sql_1);
         if(mysqli_num_rows($result)==0){
-            echo "nothing returned";
+            header("Location: UpdatePage.php");
         }
         else{
-            echo "something returned";
+            header("Location: UpdatePage2.php");
         }
     }
 
