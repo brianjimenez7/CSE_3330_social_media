@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $database = "SocialMedia";
     $servername = "localhost";
     $dataname = "root";
@@ -15,11 +16,24 @@
         // $temp="hey";
         $sql_1= "SELECT * FROM Pages where Page_ID='$pageID'"; 
         $result = $conn->query($sql_1);
-        $row = mysqli_fetch_assoc($result);
-        $Category=$row['Category'];
-        $PageName=$row['Page_Name'];
-        $Description=$row['Description'];
-        $CreateDate=$row['CreateDate'];
+        if(mysqli_num_rows($result)==1){
+            $row = mysqli_fetch_assoc($result);
+            $Category=$row['Category'];
+            $PageName=$row['Page_Name'];
+            $Description=$row['Description'];
+            $CreateDate=$row['CreateDate'];
+            $_SESSION['CreateDate']=$CreateDate;
+            $_SESSION['Description']=$Description;
+            $_SESSION['Page_Name']=$PageName;
+            $_SESSION['pageID']=$pageID;
+            $_SESSION['Category']=$Category;
+            // $_SESSION['userName']=$username;
+            header("Location: pageinfo_html.php");
+        }
+        else{
+            header("Location: ViewAPage.php");
+        }
+        
         //go to the next page to display
         // echo $CreateDate;
         // echo "<br>";
