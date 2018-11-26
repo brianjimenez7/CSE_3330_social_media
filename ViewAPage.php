@@ -54,6 +54,9 @@
             </div>
         </form>
 
+        <div class = "a">
+            <h3>Page ID & Name</h3> 
+
   <?php
             //  $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
             //  $result = mysqli_query($conn, $mysql_query);
@@ -65,9 +68,7 @@
             
 
 
-            echo '<div class = "a">
-            <h3>Page ID & Name</h3> 
-            <form method="post" action="pageinfo.php">
+            echo '<form method="post" action="pageinfo.php">
             <div class="input-group"> </div>';
 
             $sql = "SELECT Page_ID, Page_Name FROM Pages";
@@ -78,7 +79,9 @@
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result1)) 
                 {
-                  echo '<div class="input-group"><label>'.$row['Page_ID'].'  :  '.$row['Page_Name'].'
+                  echo ' <form method="post" action="pageinfo.php">
+                  <div class="input-group">
+                  <label>' .$row['Page_ID'].'  :  '.$row['Page_Name'].'
                    </label>
                    </div>' ;
                   

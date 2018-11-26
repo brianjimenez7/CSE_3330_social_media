@@ -48,15 +48,17 @@
 
         </div>
         </form>
-         <form method="post" action="create_post_authen.php">   
+         <form method="POST" action="upload_Post_Image.php"  enctype = "multipart/form-data">  
              <div class="input-group">
                 <label>Image Post</label>
-                <input type="text" name="image_post">
+                <input type="file" name="file">
             </div> 
-        <div class="input-group">
-                <button type="submit" name="image_post_button" class="btn">POST IMAGE!!!</button>
-        </div>
+             <div class="input-group">
+                <button type="submit" name="submit" class="btn">POST IMAGE!!!</button>
+             </div>
         </form> 
+
+               
 
 
 

@@ -36,20 +36,12 @@ else if( ($is_text != null) || ($is_image != null))
         } 
         else {
         
-        echo "Sorry Try again";
+       // echo "Sorry Try again";
         header("Location: create_post_authen.php");
        
         }
 
     }
-    else if ( $is_image != null )
-    {
-        echo "Feature not supported.";
-    }
-   
-    
-       
-
     
 }
 else
