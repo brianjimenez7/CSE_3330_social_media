@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include_once 'dbh.php';
     $user=$_SESSION['userName'];
 ?>
 
@@ -37,7 +38,27 @@
         <div class="header">
             <h1>Your post</h1>
         </div>
-        <p>Your post will go here</p>
+        <p>You have posted</p>
+
+        <?php
+             $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
+             $result = mysqli_query($conn, $mysql_query);
+             $id=mysqli_fetch_array($result);
+            
+            $sql = "SELECT is_text, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
+            $result1 = mysqli_query($conn, $sql);
+
+
+             if (mysqli_num_rows($result1) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result1)) {
+                    echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
+                }
+            } else {
+                echo "0 results";
+            }
+              
+        ?>
        
 
 
