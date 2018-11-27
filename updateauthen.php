@@ -9,6 +9,7 @@
     $profile_id=$_SESSION['Profile_id'];
     //$pageDescription=$_POST['PageDescription'];
     $pageID=$_POST['pageID'];
+    $_SESSION['page_ID']=$pageID;
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
