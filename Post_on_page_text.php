@@ -28,8 +28,7 @@ else if( ($is_text != null) || ($is_image != null))
 
         $pageID=$_SESSION['pageID'];
 
-
-
+    
        echo "id: " . $id[0] . " and text : " . $is_text. "<br>";
 
 
@@ -37,14 +36,11 @@ else if( ($is_text != null) || ($is_image != null))
        $mysql_query1 = "INSERT INTO Post_on_Page (isText, ProfileID, PageID) VALUES('$is_text','$id[0]', '$pageID')";
        if ($conn->query($mysql_query1) === TRUE) {
         
-        //header("Location: see_post.php");
-        echo "yes";
+        
         } 
         else {
         
-       // echo "Sorry Try again";
-       // header("Location: create_post_authen.php");
-       echo "no";
+      
         }
 
     }
