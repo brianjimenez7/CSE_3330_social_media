@@ -37,10 +37,21 @@
                 <a href="ViewPostOnPagesByAccount.php">list of posts by specific account on pages</a>
                 
                 </form>
-                <form>
-                <a href="see_post.php"> total posts/comments in of each page by all
-accounts(users) on specific date (e.g. PostDate).</a>
-                </form>
+                
+              
+               
+                <form method="POST" action="admin_see_all_post_by_dates_html.php"> 
+                <a >See all post from a specific date</a>  
+            <div class="input-group">
+                <label>Enter Date:</label>
+                <input type="date" name="date">
+            </div>  
+        <div class="input-group">
+                <button type="submit" name="date_button" class="btn">GO!</button>
+
+                         
+                    </form>
+               
             
             
             </body>

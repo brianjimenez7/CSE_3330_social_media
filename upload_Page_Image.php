@@ -45,7 +45,7 @@ if (isset($_POST['submit']))
            $result = mysqli_query($conn, $mysql_query);
            $row=mysqli_fetch_array($result);
            
-           
+           header("Location: pageinfo_html.php");
             
             }
             else

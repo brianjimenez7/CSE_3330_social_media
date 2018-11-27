@@ -25,7 +25,7 @@ else if( ($is_text != null) || ($is_image != null))
         $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
         $result = mysqli_query($conn, $mysql_query);
         $id=mysqli_fetch_array($result);
-       echo "id: " . $id[0] . "and text : " . $is_text. "<br>";
+      // echo "id: " . $id[0] . "and text : " . $is_text. "<br>";
 
 
         

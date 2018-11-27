@@ -45,12 +45,13 @@
                 <input type="text" name="mobilenumber">
             </div>
             <div class="input-group">
-                <label>Gender</label>
-                <input type="text" name="gender">
-            </div>
+            <form>
+            <input type="radio" name="gender" value="M" checked> Male<br>
+            <input type="radio" name="gender" value="F"> Female<br>
+            </form>
             <div class="input-group">
                 <label>DOB</label>
-                <input type="text" name="dob">
+                <input type="date" name="dob">
             </div>
             <div class="input-group">
                 <button type="submit" name="register" class="btn">Register</button>

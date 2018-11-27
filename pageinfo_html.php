@@ -40,8 +40,23 @@
                         
                        // echo "id: " . $id . "& " .$id1[0]. "<br>";
 
+                       //Also display if Admin
+                       //here have to verify that if you are the admin
+                        $user=$_SESSION['userName'];
+                        $P_ID=$_SESSION['Profile_id'];
+                        $sql_1= "SELECT * FROM Profile where Username='$user'"; 
+                        $result = $conn->query($sql_1);
+                        $row = mysqli_fetch_assoc($result);
+                        $PID=$row['Profile_ID'];
 
-                        if( $id == $id1[0] )
+                        $sql_2= "SELECT * FROM Profile where Username='Admin'"; 
+                        $result2 = $conn->query($sql_2);
+                        $row2 = mysqli_fetch_assoc($result2);
+                        $PID2=$row2['Profile_ID'];
+
+
+
+                        if( $id == $id1[0] ||  $PID==$PID2 )
                         {
                         //display the update pages button to redirect to UpdatePage2.php to update that page
                         //link them with the id number and admin_id
@@ -50,20 +65,12 @@
                        <form method="post" action="UpdatePage2.php">
                         <label>Update Page?</label>
                         <button type="submit" name="submit" class="btn">Yes!</button>
-                    </div> 
-                    
-                    </form>';
+                        </div> 
+                        </form>';
                     
                    
 
-                        }
-                        else
-                        {
-                            //do not display the update pages
-                           
-                        }
-
-                        
+                        }                       
                         
                     ?>   
                     </p>
