@@ -9,6 +9,13 @@
             text-indent: 20%;
                 }   
     </style>
+    <button onclick="Logout()">Logout</button>
+        <script>
+            function Logout() 
+            {   
+             window.location.href="login.php";
+            }
+        </script>
 
 
         <title>Home Page</title>
@@ -18,13 +25,13 @@
         <div class="header">
             <h1>Home Page</h1>
         </div>
-        <button onclick="Logout()">Logout</button>
+        <!-- <button onclick="Logout()">Logout</button>
         <script>
             function Logout() 
             {   
              window.location.href="login.php";
             }
-        </script>
+        </script> -->
 
             <div class = "b" >
         <?php 
@@ -58,24 +65,59 @@
 
 
         ?>
-        <p>
+        <!-- <p>
             <a href="DeleteProfile.php">Delete profile</a>
-        </p>
-        <p>
-            <a href="createPage.php">Create a page</a>
-        </p>
-        <p>
+        </p> -->
+        <!-- <form method="post" action="DeleteProfile.php">
+            <div class="input-group">
+                <label>Delete profile</label>
+                 <div class="input-group">
+                    <button type="submit" name="Yes2Delete" class="btn">Delete Profile</button>
+                </div> 
+            </div>
+        </form> -->
+        <form method="post" action="createPage.php">
+            <div class="input-group">
+                <!-- <label>Delete profile</label> -->
+                <div class="input-group">
+                    <button type="submit" name="CPage" class="btn">Create A Page</button>
+                </div>
+            </div>
+        </form>
+        <form method="post" action="ViewAPage.php">
+            <div class="input-group">
+                <!-- <label>Delete profile</label> -->
+                <div class="input-group">
+                    <button type="submit" name="VPage" class="btn">View A Page</button>
+                </div>
+            </div>
+        </form>
+        <!-- <p>
             <a href="ViewAPage.php">View a page</a>
-        </p>
-
-        
-        <p>
+        </p> -->
+        <form method="post" action="see_post.php">
+            <div class="input-group">
+                <!-- <label>Delete profile</label> -->
+                <div class="input-group">
+                    <button type="submit" name="OPost" class="btn">See Your Post</button>
+                </div>
+            </div>
+        </form>
+        <form method="post" action="createPost.php">
+            <div class="input-group">
+                <!-- <label>Delete profile</label> -->
+                <div class="input-group">
+                    <button type="submit" name="OPost" class="btn">Create Post</button>
+                </div>
+            </div>
+        </form>
+        <!-- <p>
             <a href="see_post.php">See your post</a>
-        </p>
-        <p>
+        </p> -->
+        <!-- <p>
 
             <a href="createPost.php">Create Post!</a>
-        </p>
+        </p> -->
         </div>
 
         <p>

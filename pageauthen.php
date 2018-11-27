@@ -32,7 +32,7 @@ else{
     if ($conn->query($sql) === TRUE) {
     // echo "New record created successfully";
     // echo "<br>";
-    header("Location: home.php");
+    header("Location: ViewAPage.php");
     } 
     else {
     //echo "Error: " . $list . "<br>" . $conn->error;

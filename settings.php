@@ -125,9 +125,26 @@
                 <div>
                 <form action = "admin_php.php" method = "POST" >
                 <button type = "submit" name = "admin" >Admin Settings</button>
-
+                <!-- <form method="post" action="DeleteProfile.php">
+            <div class="input-group">
+                <label>Delete profile</label>
+                 <div class="input-group">
+                    <button type="submit" name="Yes2Delete" class="btn">Delete Profile</button>
+                </div> 
+            </div>
+        </form> -->
+                        </form>
+                        <form method="post" action="DeleteProfile.php">
+            <div class="input-group">
+                <label>Delete profile</label>
+                 <div class="input-group">
+                    <button type="submit" name="Yes2Delete" class="btn">Delete Profile</button>
+                </div> 
+            </div>
+        </form>
 
                 </div>
+
             
             
             
