@@ -62,9 +62,6 @@
             <a href="createPage.php">Create a page</a>
         </p>
         <p>
-            <a href="ViewOwnPages.php">View Own Pages</a>
-        </p>
-        <p>
             <a href="ViewAPage.php">View a page</a>
         </p>
 
@@ -78,10 +75,6 @@
 
             <a href="createPost.php">Create Post!</a>
         </p>
-        <p>
-            <a href="createPost2Page.php">Create Post To A Page</a>
-        </p>
-
         </div>
 
         <p>

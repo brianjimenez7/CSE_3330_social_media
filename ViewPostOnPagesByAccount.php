@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <style>
+    <html>
+        <head>
+        <style>
         div.a {
             text-indent: 40%;
                 }                  
     </style>
-
-
-    <button onclick="Logout()">Logout</button>
+        <button onclick="Logout()">Logout</button>
         <script>
             function Logout() 
             {
@@ -29,36 +27,27 @@
              window.history.back();
             }
         </script>
-       
-
-
-       
-
-
-
-        
-        <title>View Page</title>
+        <title>Search Account</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="header">
-            <h1>View Page Info</h1>
-        </div>
-        <form method="post" action="pageinfo.php">
+
+        </head>
+        <body>
+            <div class="header">
+                <h1>Search Account</h1>
+            </div>
+            <form method="post" action="AccountPost.php">
             <div class="input-group">
-                <label>Enter Page ID</label>
-                <input type="text" name="PageID">
+                <label>Enter Account ID</label>
+                <input type="text" name="AccountID">
             </div>
             <div class="input-group">
-                <button type="submit" name="register" class="btn">Submit</button>
+                <button type="submit" name="accountID" class="btn">Submit</button>
             </div>
         </form>
-
         <div class = "a">
-            <h3>Page ID & Name</h3> 
+            <h2>Account ID & Username</h2> 
         </div>
-
-  <?php
+        <?php
             //  $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
             //  $result = mysqli_query($conn, $mysql_query);
             //  $id=mysqli_fetch_array($result);
@@ -72,7 +61,7 @@
             echo '<form method="post" action="pageinfo.php">
             <div class="input-group"> </div>';
 
-            $sql = "SELECT Page_ID, Page_Name FROM Pages";
+            $sql = "SELECT Profile_ID, Username FROM Profile";
             $result1 = mysqli_query($conn, $sql);
 
 
@@ -82,7 +71,7 @@
                 {
                   echo ' <form method="post" action="pageinfo.php">
                   <div class="input-group">
-                  <label>' .$row['Page_ID'].'  :  '.$row['Page_Name'].'
+                  <label>' .$row['Profile_ID'].'  :  '.$row['Username'].'
                    </label>
                    </div>' ;
                   
@@ -92,8 +81,5 @@
             }
               
         ?>
-
-
-
-    </body>
-</html>
+        </body>
+    </html>
