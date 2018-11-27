@@ -33,7 +33,14 @@
                  <div class="header">
                     <h1>Admin Settings</h1>
                 </div>
-             
+                <form>
+                <a href="ViewPostOnPagesByAccount.php">list of posts by specific account on pages</a>
+                
+                </form>
+                <form>
+                <a href="see_post.php"> total posts/comments in of each page by all
+accounts(users) on specific date (e.g. PostDate).</a>
+                </form>
             
             
             </body>
