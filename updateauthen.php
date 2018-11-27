@@ -22,6 +22,7 @@
             header("Location: UpdatePage.php");
         }
         else{
+            
             header("Location: UpdatePage2.php");
         }
     }
