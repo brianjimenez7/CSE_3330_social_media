@@ -154,6 +154,8 @@
                 <button type="submit" name="submit" class="btn">POST IMAGE!!!</button>
              </div>
         </form> 
+</div>
+                    
 
 
 
