@@ -133,7 +133,7 @@
         </form>
 
 <div class="header">
-            <h1>Create a Post</h1>
+            <h1>Post to this Page</h1>
         </div>
         <form method="POST" action="Post_on_page_text.php">   
             <div class="input-group">
@@ -172,22 +172,27 @@
 
 
  <?php
+
+session_start(); 
+include_once 'dbh.php';
+//$user=$_SESSION['userName'];
+
+
+
  //this is to show the Post and Images
-             $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
-             $result = mysqli_query($conn, $mysql_query);
-             $id=mysqli_fetch_array($result);
             
-            $sql = "SELECT is_text, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
+             $pageID=$_SESSION['pageID'];
+            
+         
+
+            $sql = "SELECT * FROM Post_on_Page WHERE PageID='$pageID'";
             $result1 = mysqli_query($conn, $sql);
-
-            
-
-            
+                        
              if (mysqli_num_rows($result1) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result1)) {
                    // echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
-                    if( $row['is_text'] != null )
+                    if( $row['isText'] != null )
                     {
 
                     
@@ -195,13 +200,13 @@
                    <div class="input-group">
                    <h3>Text Post:</h3>
                    <label>
-                    '.$row['is_text'].'
+                    '.$row['isText'].'
                    </label>
                    </div>' ;
                    echo '<div class="input-group">
                    <label>
                    Date: 
-                    '.$row['Created_post'].'
+                    '.$row['Time'].'
                    </label>
                    </div>
                    </form>' ;
@@ -216,32 +221,29 @@
 
                 echo '<div class = "a"><h3> Images</h3></div></div>';
 
-            $sql1 = "SELECT is_Audio, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
+            $sql1 =  "SELECT * FROM Post_on_Page WHERE PageID='$pageID'";
             $result2 = mysqli_query($conn, $sql1);
-           // $Post_image =mysqli_fetch_array($result2);
-          //  echo '<div class="c"> <img src="'.$Post_image[0].'" width="300" height="250" /></div>';
 
-
-       
-
+           // echo $isImage;
+        
              if (mysqli_num_rows($result2) > 0)
               {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result2)) {
-                   // echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
-                   if( $row['is_Audio'] != null )
+                  
+                   if( $row['isImage'] != null )
                    {
 
                    echo '<form method="post" >
                    <div class="input-group">
                    <h3>Image Post:</h3>
-                   <label> <img src="'.$row['is_Audio'].'" width="300" height="250" />
+                   <label> <img src="'.$row['isImage'].'" width="300" height="250" />
                    </label></div>';
 
                    echo '
                    <label>
                    Date:
-                    '.$row['Created_post'].'
+                    '.$row['Time'].'
                    </label>
                    </div>
                    </form>' ;
