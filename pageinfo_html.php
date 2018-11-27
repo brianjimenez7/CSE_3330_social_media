@@ -23,6 +23,51 @@
             }
         </script>
 
+        <p>
+                    <?php
+                        session_start(); 
+                        include_once 'dbh.php';
+                        $id = $_SESSION['Profile_id'];
+
+                        $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
+                        $result = mysqli_query($conn, $mysql_query);
+                        
+                        $pageID=$_SESSION['pageID'];
+                        
+                        $mysql_query1 = "SELECT Admin_ID FROM Pages where Page_ID='$pageID'";
+                        $result1 = mysqli_query($conn, $mysql_query1);
+                        $id1=mysqli_fetch_array($result1);
+                        
+                       // echo "id: " . $id . "& " .$id1[0]. "<br>";
+
+
+                        if( $id == $id1[0] )
+                        {
+                        //display the update pages button to redirect to UpdatePage2.php to update that page
+                        //link them with the id number and admin_id
+
+                       echo ' <div>
+                       <form method="post" action="UpdatePage2.php">
+                        <label>Update Page?</label>
+                        <button type="submit" name="submit" class="btn">Yes!</button>
+                    </div> 
+                    
+                    </form>';
+                    
+                   
+
+                        }
+                        else
+                        {
+                            //do not display the update pages
+                           
+                        }
+
+                        
+                        
+                    ?>   
+                    </p>
+
 
         <title>View Page Info</title>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -86,5 +131,141 @@
                 <button type="submit" name="register" class="btn">Submit</button>
             </div> -->
         </form>
+
+<div class="header">
+            <h1>Create a Post</h1>
+        </div>
+        <form method="POST" action="Post_on_page_text.php">   
+            <div class="input-group">
+                <label>Text Post</label>
+                <input type="text" name="text_post_page">
+            </div>  
+        <div class="input-group">
+                <button type="submit" name="text_post_button" class="btn">POST TEXT!!!</button>
+
+        </div>
+        </form>
+         <form method="POST" action="upload_Page_Image.php"  enctype = "multipart/form-data">  
+             <div class="input-group">
+                <label>Image Post</label>
+                <input type="file" name="file">
+            </div> 
+             <div class="input-group">
+                <button type="submit" name="submit" class="btn">POST IMAGE!!!</button>
+             </div>
+        </form> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <?php
+ //this is to show the Post and Images
+             $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
+             $result = mysqli_query($conn, $mysql_query);
+             $id=mysqli_fetch_array($result);
+            
+            $sql = "SELECT is_text, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
+            $result1 = mysqli_query($conn, $sql);
+
+            
+
+            
+             if (mysqli_num_rows($result1) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result1)) {
+                   // echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
+                    if( $row['is_text'] != null )
+                    {
+
+                    
+                   echo '<form method="post" action="pageinfo.php">
+                   <div class="input-group">
+                   <h3>Text Post:</h3>
+                   <label>
+                    '.$row['is_text'].'
+                   </label>
+                   </div>' ;
+                   echo '<div class="input-group">
+                   <label>
+                   Date: 
+                    '.$row['Created_post'].'
+                   </label>
+                   </div>
+                   </form>' ;
+                    }
+                }
+            } 
+        
+        else {
+                echo "0 results <br>";
+            }
+        
+
+                echo '<div class = "a"><h3> Images</h3></div></div>';
+
+            $sql1 = "SELECT is_Audio, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
+            $result2 = mysqli_query($conn, $sql1);
+           // $Post_image =mysqli_fetch_array($result2);
+          //  echo '<div class="c"> <img src="'.$Post_image[0].'" width="300" height="250" /></div>';
+
+
+       
+
+             if (mysqli_num_rows($result2) > 0)
+              {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result2)) {
+                   // echo "Your post:  " . $row['is_text']. ":" . $row['Created_post']. "<br>";
+                   if( $row['is_Audio'] != null )
+                   {
+
+                   echo '<form method="post" >
+                   <div class="input-group">
+                   <h3>Image Post:</h3>
+                   <label> <img src="'.$row['is_Audio'].'" width="300" height="250" />
+                   </label></div>';
+
+                   echo '
+                   <label>
+                   Date:
+                    '.$row['Created_post'].'
+                   </label>
+                   </div>
+                   </form>' ;
+                   }
+                   
+                }
+            } 
+        else {
+                echo "0 results";
+            }
+        
+              
+        ?>
+
+
+
+
+
+
+
+
+
+
+
+
     </body>
 </html>
