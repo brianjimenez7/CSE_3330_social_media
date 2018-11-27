@@ -59,15 +59,16 @@
 
         ?>
         <p>
+            <a href="DeleteProfile.php">Delete profile</a>
+        </p>
+        <p>
             <a href="createPage.php">Create a page</a>
         </p>
         <p>
             <a href="ViewAPage.php">View a page</a>
         </p>
 
-        <p>
-        <a href="UpdatePage.php">Update your page</a>
-        </p>
+        
         <p>
             <a href="see_post.php">See your post</a>
         </p>
