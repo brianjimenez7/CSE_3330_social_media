@@ -63,9 +63,18 @@ profile-img
     text-indent: 45%;
 }
 
- */
+ 
 
-
+ .input-group{
+    margin: 20px 100px 5px 20px; 
+    padding:10px;
+    text-align: left;
+    margin: 3px;
+    font-size: 15px;
+    background: #5f9ea0;
+    border: 1;
+    border-radius: 10px;
+}*/
 
  /* W3.CSS 4.12 Novemberr 2018 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}

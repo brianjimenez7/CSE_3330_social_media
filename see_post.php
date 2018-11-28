@@ -34,8 +34,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">Logout</a>
   
-        </div>
-        </div>
+       
+       
 
         <title>See a Post</title>
         <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
@@ -67,13 +67,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
                     
                    echo '<form method="post" action="pageinfo.php">
-                   <div class="input-group">
+                   <div class="w3-animate-zoom center ">
                    <h3>Text Post:</h3>
                    <label>
                     '.$row['is_text'].'
                    </label>
                    </div>' ;
-                   echo '<div class="input-group">
+                   echo '<div class="w3-animate-zoom center ">
                    <label>
                    Date: 
                     '.$row['Created_post'].'
@@ -89,7 +89,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             }
         
 
-                echo '<div class = "a"><h3> Images</h3></div></div>';
+                echo '<div class = "a"><h3> Images</h3>';
 
             $sql1 = "SELECT is_Audio, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
             $result2 = mysqli_query($conn, $sql1);
@@ -108,7 +108,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                    {
 
                    echo '<form method="post" >
-                   <div class="input-group">
+                   <div class="w3-animate-zoom center ">
                    <h3>Image Post:</h3>
                    <label> <img src="'.$row['is_Audio'].'" width="300" height="250" />
                    </label></div>';
