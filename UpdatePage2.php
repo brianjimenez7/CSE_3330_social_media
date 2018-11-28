@@ -1,28 +1,20 @@
+<?php
+include_once 'all_icons.php';
+?>
 <!DOCTYPE html>
 <html>
+<div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+ <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="home.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Home</a>
+ 
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">Logout</a>
+  <a href="settings.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+  <i class="material-icons">person</i>
+  </a>
+</div>
     <head>
-    <button onclick="Logout()">Logout</button>
-        <script>
-            function Logout() 
-            {
-             window.location.href="login.php";
-            }
-        </script>
- <button onclick="goHome()">Home</button>
-        <script>
-            function goHome() 
-            {
-             window.location.href="home.php";
-            }
-        </script>
-    <button onclick="goBack()">Go Back</button>
-        <script>
-            function goBack() 
-            {
-             window.history.back();
-            }
-        </script>
-
+    
 
         <title>Update Page</title>
         <link rel="stylesheet" type="text/css" href="style.css">
