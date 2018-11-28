@@ -1,28 +1,45 @@
+<?php
+include_once 'all_icons.php';
+?>
+
 <!DOCTYPE html>
 <html>
-    <head>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+
+    
         <title>Login</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="header">
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    
+
+    
+    <div class="w3-animate-zoom">
+    
+  
+
+    
+        <!-- <div class="header"> -->
             <h1>Login</h1>
-        </div>
+       
         <form method="post" action="loginauthen.php">
-            <div class="input-group">
+            <!-- <div class="input-group"> -->
                 <label>Username</label>
                 <input type="text" name="username_1">
-            </div>
-            <div class="input-group">
+           
+            <!-- <div class="input-group"> -->
                 <label>Password</label>
                 <input type="password" name="password_3">
-            </div>
-            <div class="input-group">
+            
+            <!-- <div class="input-group"> -->
                 <button type="submit" name="login" class="btn">Login</button>
-            </div>
+            
             <p>
                 New member? <a href="register.php">Sign Up</a>
             </p>
         </form>
-    </body>
+        
+        
 </html>
