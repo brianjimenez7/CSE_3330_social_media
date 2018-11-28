@@ -13,44 +13,33 @@ include_once 'all_icons.php';
   <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">Logout</a>
 </div>
         <head>
-        <style>
-        div.a {
-            text-indent: 45%;
-            color: blue;
-                }  
-        div.b {
-            text-indent: 40%;
-            color: red;
-                } 
-                div.c {
-            text-indent: 35%;
-            color: blue:
-                } 
-        </style>
+        
 
        
 
 
         <title>Settings</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+       
 
         </head>
 
             <body>
-                <div class="header">
+                <div class="w3-center">
                     <h1>Settings</h1>
-                </div>
+               
                 <div>
-                    <h2>Welcome user</h2>
-                    
+                    <h2>Welcome,</h2>
+                    </div>
                     <?php 
 
                     
 
                         session_start();
                         include_once 'dbh.php';
+                        
+                     
 
-
+                        
                         $user=$_SESSION['userName'];
                         $email=$_SESSION['email'];
                         echo "Username: " . $user . "<br>";
@@ -78,12 +67,12 @@ include_once 'all_icons.php';
                         {
                            
                             // echo  '<div class="b"> <p>No Profile pick. Go to settings to upload! </p></div>';
-                            echo '<div class="c"> <p>Upload your Profile picture here!!</p></div>';
+                            echo '<div class="w3-center"> <p>Upload your Profile picture here!!</p></div>';
                         }
                         else
                         {
         
-                            echo '<div class="c"> <img src="'.$Pro_image[0].'" width="300" height="250" /></div>';
+                            echo '<div class="w3-center"> <img src="'.$Pro_image[0].'" width="300" height="250" /></div>';
                         }
                        
                    
@@ -96,39 +85,32 @@ include_once 'all_icons.php';
                 
                    
                 <!-- upload pictures to profile -->
-                <div class = "b">
+                <div class = "w3-center">
                 <h3>Upload profile picture</h3>
-                </div>
+                
                 <form action = "upload.php" method = "POST" enctype = "multipart/form-data">
                 <input type = "file" name = "file">
                 <button type = "submit" name = "submit" >Upload profile image</button>
-                
+                </div>
                 </form>
 
              
 
 
-                <div class = "a">
+                <div class = "w3-center">
                 <h1>Admin</h1>
-                </div>
+                
                 <div>
                 <form action = "admin_php.php" method = "POST" >
                 <button type = "submit" name = "admin" >Admin Settings</button>
-                <!-- <form method="post" action="DeleteProfile.php">
-            <div class="input-group">
-                <label>Delete profile</label>
-                 <div class="input-group">
+                
+           
+                        </form>
+                        <form method="post" action="DeleteProfile.php">
+            
                     <button type="submit" name="Yes2Delete" class="btn">Delete Profile</button>
                 </div> 
             </div>
-        </form> -->
-                        </form>
-                        <form method="post" action="DeleteProfile.php">
-            <div class="input-group">
-                <label>Delete profile</label>
-                 <div class="input-group">
-                    <button type="submit" name="Yes2Delete" class="btn">Delete Profile</button>
-                </div> 
             </div>
         </form>
 

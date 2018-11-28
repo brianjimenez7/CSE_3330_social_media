@@ -34,7 +34,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">Logout</a>
   
-       
+            </div>
        
 
         <title>See a Post</title>
@@ -42,7 +42,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <!-- </head> -->
 
    
-        <div class="header">
+        <div class="w3-center">
             <h1>Your post</h1>
         </div>
        
@@ -67,13 +67,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 
                     
                    echo '<form method="post" action="pageinfo.php">
-                   <div class="w3-animate-zoom center ">
+                   <div class="w3-animate-zoom w3-center ">
                    <h3>Text Post:</h3>
                    <label>
                     '.$row['is_text'].'
                    </label>
                    </div>' ;
-                   echo '<div class="w3-animate-zoom center ">
+                   echo '<div class="w3-animate-zoom w3-center ">
                    <label>
                    Date: 
                     '.$row['Created_post'].'
@@ -89,7 +89,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
             }
         
 
-                echo '<div class = "a"><h3> Images</h3>';
+                echo '<div class = "w3-center w3-padding-64"><h3> Images</h3>';
 
             $sql1 = "SELECT is_Audio, Created_post  FROM Post WHERE Profile_ID='$id[0]'";
             $result2 = mysqli_query($conn, $sql1);
@@ -108,13 +108,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                    {
 
                    echo '<form method="post" >
-                   <div class="w3-animate-zoom center ">
+                   <div class="w3-animate-zoom center w3-center ">
                    <h3>Image Post:</h3>
                    <label> <img src="'.$row['is_Audio'].'" width="300" height="250" />
                    </label></div>';
 
                    echo '
                    <label>
+                   <div class="w3-animate-zoom center w3-center ">
                    Date:
                     '.$row['Created_post'].'
                    </label>

@@ -30,23 +30,25 @@ include_once 'all_icons.php';
 
         
         <title>View Page</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
     <body>
-        <div class="header">
+        <div class="w3-center">
             <h1>View Page Info</h1>
         </div>
         <form method="post" action="pageinfo.php">
-            <div class="input-group">
+            <div class="w3-center">
                 <label>Enter Page ID</label>
                 <input type="text" name="Pageid">
             </div>
-            <div class="input-group">
+            
+            <div class="w3-center">
                 <button type="submit" name="register" class="btn">Submit</button>
-            </div>
+           
         </form>
+       
 
-        <div class = "a">
+        <div class = "w3-center">
             <h3>Page ID & Name</h3> 
         </div>
 
