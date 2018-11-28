@@ -1,5 +1,11 @@
 <?php
 include_once 'all_icons.php';
+session_start();
+include_once 'dbh.php';
+
+        
+     
+
 ?>
 
 <!DOCTYPE html>
@@ -10,38 +16,10 @@ include_once 'all_icons.php';
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
     <head>
-    <style>
-        div.a {
-            text-indent: 45%;
-                }   
-                div.b {
-            text-indent: 20%;
-                }   
-    </style>
-
-
-
-
-
-
-    <!-- <button onclick="Logout()">Logout</button>
-        <script>
-            function Logout() 
-            {   
-             window.location.href="login.php";
-            }
-        </script>
-        <button onclick="goHome()">Home</button>
-        <script>
-            function goHome() 
-            {
-             window.location.href="home.php";
-            }
-        </script> -->
-
+   
 
         <title>Home Page</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+       
     </head>
     <!-- Navbar -->
 <!-- <div class="w3-top"> -->
@@ -55,6 +33,88 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <i class="material-icons">person</i>
   </a>
 
+
+  <!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  <!-- The Grid -->
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col m3">
+      <!-- Profile -->
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <?php
+         $user=$_SESSION['userName'];
+         $email=$_SESSION['email'];
+         $dob=$_SESSION['DOB'];
+
+        
+          $mysql_query = "SELECT * FROM Profile where Username='$user'";
+          $result = mysqli_query($conn, $mysql_query);
+          $Pro_image=mysqli_fetch_array($result);
+
+        //  echo $email . $dob;
+         echo '<div class="w3-center"><img src= "'.$Pro_image['Profile_Images'].'" class="w3-circle" style="height:160px;width:160px" alt="Avatar"></div>';
+         
+         echo '<hr>
+        <p><i class="fa fa-id-card fa-fw w3-margin-right w3-text-theme"></i>'.$user.'</p>
+         <p><i class="fa fa-envelope fa-fw w3-margin-right w3-text-theme"></i>'.$Pro_image['Email'].'</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>'.$Pro_image['DOB'].'</p>'
+         ?>
+        </div>
+      </div>
+      <br>
+
+
+       <!-- Accordion -->
+       <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-magic fa-fw w3-margin-right"></i>Create Page</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-eye fa-fw w3-margin-right"></i>View Pages</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-pencil-square-o fa-fw w3-margin-right"></i> My Post</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+
   
 </div>
     <body>
@@ -64,48 +124,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
        
 
             <div class = "sidebar" >
-        <?php 
-
-                            
-
-        session_start();
-        include_once 'dbh.php';
-
-        $user=$_SESSION['userName'];
-        
-        $mysql_query = "SELECT Profile_ID FROM Profile where Username='$user'";
-        $result = mysqli_query($conn, $mysql_query);
-        $id=mysqli_fetch_array($result);
-        // echo "id: " . $id[0] . "<br>";
-
-        $mysql_query = "SELECT Profile_Images FROM Profile where Username='$user'";
-        $result = mysqli_query($conn, $mysql_query);
-        $Pro_image=mysqli_fetch_array($result);
-
-
-        if( $Pro_image[0] == null )
-        {
-            echo "No Profile pick. Go to settings to upload!";
-        }
-        else
-        {
-
-            echo '<div class="front-page-section"> <img src="'.$Pro_image[0].'" width="300" height="250" /></div>';
-        }
-
-
-        ?>
-        <!-- <p>
-            <a href="DeleteProfile.php">Delete profile</a>
-        </p> -->
-        <!-- <form method="post" action="DeleteProfile.php">
-            <div class="input-group">
-                <label>Delete profile</label>
-                 <div class="input-group">
-                    <button type="submit" name="Yes2Delete" class="btn">Delete Profile</button>
-                </div> 
-            </div>
-        </form> -->
+  
+       
         <form method="post" action="createPage.php">
             <div class="input-group">
                 <!-- <label>Delete profile</label> -->
@@ -141,38 +161,11 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
                 </div>
             </div>
         </form>
-        <!-- <p>
-            <a href="see_post.php">See your post</a>
-        </p> -->
-        <!-- <p>
-
-            <a href="createPost.php">Create Post!</a>
-        </p> -->
+      
         </div>
 
-        <p>
-            <a href="settings.php">Settings</a>
-        </p>
-       
-
-        <?php 
-                        session_start();
-                        include_once 'dbh.php';
-
-
-                        $user=$_SESSION['userName'];
-                        $email=$_SESSION['email'];
-                        echo "Username: " . $user . "<br>";
-                        
-                        
-
-                        $mysql_query = "SELECT email FROM Profile where Username='$user'";
-                        $result = mysqli_query($conn, $mysql_query);
-                        $email=mysqli_fetch_array($result);
-                        echo "Email: " . $email[0] . "<br>";
-                        
-                    ?>
-
         
+
+    
     </body>
 </html>
