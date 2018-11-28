@@ -6,7 +6,7 @@
     $pass = "root";
     $conn = new mysqli($servername, $dataname, $pass, $database);
     //$username= $_POST["username_1"];
-    $pageID=$_POST["PageID"];
+    $pageID=$_POST["Pageid"];
     // echo $pageID;
     // Check connection
     if ($conn->connect_error) {
@@ -17,6 +17,7 @@
         $sql_1= "SELECT * FROM Pages where Page_ID='$pageID'"; 
         $result = $conn->query($sql_1);
         if(mysqli_num_rows($result)==1){
+            // echo $pageID;
             $row = mysqli_fetch_assoc($result);
             $Category=$row['Category'];
             $PageName=$row['Page_Name'];
@@ -26,7 +27,10 @@
             $_SESSION['Description']=$Description;
             $_SESSION['Page_Name']=$PageName;
             $_SESSION['pageID']=$pageID;
+            $_SESSION['pageIDs']=$pageID;
             $_SESSION['Category']=$Category;
+            // echo $pageID;
+            // echo $_SESSION['pageID'];
             // $_SESSION['userName']=$username;
             header("Location: pageinfo_html.php");
         }

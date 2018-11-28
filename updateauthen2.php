@@ -7,7 +7,7 @@
     $conn = new mysqli($servername, $dataname, $pass, $database);
     $user=$_SESSION['userName'];
     $profile_id=$_SESSION['Profile_id'];
-    $pageID=$_SESSION['page_ID'];
+    $pageID=$_SESSION['pageID'];
     $pageName=$_POST['PageName'];
     $pageCategory=$_POST['PageCategory'];
     $pageDescription=$_POST['PageDescription'];
@@ -27,12 +27,14 @@
 //     }
     if(($pageCategory=="")&&($pageName=="")&&($pageDescription=="")){
         echo "nothing to change";
+        header("Location: ViewAPage.php");
     }
     else if(($pageCategory=="")&&($pageName=="")){
         echo "change description <br>";
         $sql = "UPDATE Pages SET Description='$pageDescription' WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
@@ -43,6 +45,7 @@
         $sql = "UPDATE Pages SET Category='$pageCategory' WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
@@ -51,9 +54,12 @@
     }
     else if(($pageCategory=="")&&($pageDescription=="")){
         echo "change name <br>";
+        // echo $profile_id;
+        //echo $pageID; 
         $sql = "UPDATE Pages SET Page_Name='$pageName' WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
@@ -65,6 +71,7 @@
         $sql = "UPDATE Pages SET Page_Name='$pageName' , Description='$pageDescription'  WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
@@ -75,6 +82,7 @@
         $sql = "UPDATE Pages SET Category='$pageCategory' , Description='$pageDescription'  WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
@@ -85,6 +93,7 @@
         $sql = "UPDATE Pages SET Category='$pageCategory' , Page_Name='$pageName'  WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
@@ -95,6 +104,7 @@
         $sql = "UPDATE Pages SET Category='$pageCategory' , Page_Name='$pageName', Description='$pageDescription'  WHERE (Admin_ID='$profile_id' and Page_ID='$pageID')";
         if ($conn->query($sql) === TRUE) {
             echo "Record updated successfully";
+            header("Location: ViewAPage.php");
         } 
         else {
             echo "Error updating record: " . $conn->error;
