@@ -1,5 +1,14 @@
+<?php
+include_once 'all_icons.php';
+?>
+
 <!DOCTYPE html>
 <html>
+
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
     <head>
     <style>
         div.a {
@@ -9,31 +18,52 @@
             text-indent: 20%;
                 }   
     </style>
-    <button onclick="Logout()">Logout</button>
+
+
+
+
+
+
+    <!-- <button onclick="Logout()">Logout</button>
         <script>
             function Logout() 
             {   
              window.location.href="login.php";
             }
         </script>
+        <button onclick="goHome()">Home</button>
+        <script>
+            function goHome() 
+            {
+             window.location.href="home.php";
+            }
+        </script> -->
 
 
         <title>Home Page</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
-        <div class="header">
-            <h1>Home Page</h1>
-        </div>
-        <!-- <button onclick="Logout()">Logout</button>
-        <script>
-            function Logout() 
-            {   
-             window.location.href="login.php";
-            }
-        </script> -->
+    <!-- Navbar -->
+<!-- <div class="w3-top"> -->
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+ <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="home.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Home</a>
+ 
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">Logout</a>
+  <a href="settings.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+  <i class="material-icons">person</i>
+  </a>
 
-            <div class = "b" >
+  
+</div>
+    <body>
+        <div class="front-page-section">
+            <h1>CreepR</h1>
+        </div>
+       
+
+            <div class = "sidebar" >
         <?php 
 
                             
@@ -60,7 +90,7 @@
         else
         {
 
-            echo '<div class="c"> <img src="'.$Pro_image[0].'" width="300" height="250" /></div>';
+            echo '<div class="front-page-section"> <img src="'.$Pro_image[0].'" width="300" height="250" /></div>';
         }
 
 
