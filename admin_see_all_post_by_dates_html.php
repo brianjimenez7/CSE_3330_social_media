@@ -1,28 +1,32 @@
+<?php
+include_once 'all_icons.php';
+session_start();
+include_once 'dbh.php';
+
+        
+     
+
+?>
+
 <!DOCTYPE html>
     <html>
-        <head>
-        <button onclick="Logout()">Logout</button>
-        <script>
-            function Logout() 
-            {
-             window.location.href="login.php";
-            }
-        </script>
- <button onclick="goHome()">Home</button>
-        <script>
-            function goHome() 
-            {
-             window.location.href="home.php";
-            }
-        </script>
-    <button onclick="goBack()">Go Back</button>
-        <script>
-            function goBack() 
-            {
-             window.history.back();
-            }
-        </script>
-
+    <style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+    <head>
+    <html>
+       <!-- Navbar -->
+<!-- <div class="w3-top"> -->
+ <div class="w3-bar w3-theme-d2 w3-center w3-large">
+ <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="home.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Home</a>
+ 
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:home.php" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="login.php" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">Logout</a>
+  <a href="settings.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+  <i class="material-icons">person</i>
+  </a>
+  </div>
 
         <title>Post on Specific Date</title>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -30,7 +34,7 @@
         </head>
 
             <body>
-                 <div class="header">
+                 <div class="w3-center">
                     <h1>All Post for this day</h1>
                 
                     <?php
@@ -66,17 +70,17 @@
            
                                
                               echo '<form method="post" >
-                              <div class="input-group">
+                              <div class="w3-center w3-border w3-hover-border-black ">
                               <h3>Text Post:</h3>
                               <label>
                                '.$row['is_text'].'
-                              </label>
-                              </div>' ;
-                              echo '<div class="input-group">
+                              </label>' ;
+                              echo '<div class="w3-center w3-border w3-hover-border-black">
                               <label>
                               From: 
                                '.$abc['Fname'].' '.$abc['Lname'].'
                               </label>
+                              </div>
                               </div>
                               </form>' ;
 
@@ -91,7 +95,7 @@
                        }
                    
            
-                           echo '<div class = "a"><h3> Images</h3></div></div>';
+                           echo '<div class = "w3-center w3-padding-64"><h3> Images</h3></div></div>';
            
                        $sql2 = "SELECT is_Audio, Created_post ,Profile_ID FROM Post WHERE Created_post like '%$date%'";
                        $result2 = mysqli_query($conn, $sql2);
@@ -113,17 +117,20 @@
                                 $abc=mysqli_fetch_array($result3);
            
                               echo '<form method="post" >
-                              <div class="input-group">
+                              <div class="w3-center w3-border w3-hover-border-black">
                               <h3>Image Post:</h3>
                               <label> <img src="'.$row['is_Audio'].'" width="300" height="250" />
-                              </label></div>';
+                              </label> </div>';
            
                               echo '
                               <label>
+                              <div class="w3-center w3-border w3-hover-border-black">
                               From:
                                '.$abc['Fname'].' '.$abc['Lname'].'
                               </label>
                               </div>
+                              </div>
+                              
                               </form>' ;
                             }
                               
@@ -148,7 +155,7 @@
 
 
 
-                     <div class="header">
+                     <div class="w3-center w3-padding-64">
                     <h1>Posts from Pages</h1>
                    
 
@@ -192,13 +199,13 @@
            
                                
                               echo '<form method="post" >
-                              <div class="input-group">
+                              <div class="w3-center w3-border w3-hover-border-black">
                               <h3>Text Post:</h3>
                               <label>
                                '.$row['isText'].'
                               </label>
                               </div>' ;
-                              echo '<div class="input-group">
+                              echo '<div class="w3-center w3-border w3-hover-border-black">
                               <label>
                               From: 
                                '.$abc['Fname'].' '.$abc['Lname'].'
@@ -218,7 +225,7 @@
                        }
                    
            
-                           echo '<div class = "a"><h3> Images</h3></div></div>';
+                           echo '<div class = "w3-center w3-padding-64"><h3> Images</h3></div></div>';
            
                        $sql7 = "SELECT isImage, Time ,ProfileID, PageID  FROM Post_on_Page WHERE Time like '%$date%'";
                        $result7 = mysqli_query($conn, $sql7);
@@ -245,13 +252,14 @@
                                   $abcde=mysqli_fetch_array($result4);
            
                               echo '<form method="post" >
-                              <div class="input-group">
+                              <div class="w3-center w3-border w3-hover-border-black w2-padding-28">
                               <h3>Image Post:</h3>
                               <label> <img src="'.$row['isImage'].'" width="300" height="250" />
                               </label></div>';
            
                               echo '
                               <label>
+                              <div class="w3-center w3-border w3-hover-border-black">
                               From:
                                '.$abc['Fname'].' '.$abc['Lname'].'
                                <br>In Page : '.$abcde['Page_Name'].'

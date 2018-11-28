@@ -14,31 +14,31 @@ include_once 'all_icons.php';
   </a>
 </div>
     <head>
-   
+</div>
 
 
     
         <title>Create Page</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        
     </head>
     <body>
-        <div class="header">
+        <div class="w3-center">
             <h1>New Page</h1>
         </div>
         <form method="post" action="pageauthen.php">
-            <div class="input-group">
+            <div class="w3-center">
                 <label>Page Name</label>
                 <input type="text" name="PageName">
             </div>
-            <div class="input-group">
+            <div class="w3-center">
                 <label>Page Category</label>
                 <input type="text" name="PageCategory">
             </div>
-            <div class="input-group">
-                <label>Page Description</label>
+            <div class="w3-center">
+                <label>Page Description<br></label>
                 <textarea name="PageDescription" rows="7" cols="44"></textarea>
             </div>
-            <div class="input-group">
+            <div class="w3-center">
                 <button type="submit" name="register" class="btn">Submit</button>
             </div>
         </form>
