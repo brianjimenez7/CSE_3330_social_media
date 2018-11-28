@@ -46,11 +46,12 @@ include_once 'all_icons.php';
                 <h4>Page Name:</h4>
                 <?php 
                     session_start();
-                    $pageID=$_SESSION['page_ID'];
                     $database = "SocialMedia";
                     $servername = "localhost";
                     $dataname = "root";
                     $pass = "root";
+                    $pageID=$_SESSION['pageID'];
+                    // echo $pageID;
                     $conn = new mysqli($servername, $dataname, $pass, $database);
                     $sql_1= "SELECT * FROM Pages where Page_ID='$pageID'"; 
                     $result = $conn->query($sql_1);
@@ -60,7 +61,8 @@ include_once 'all_icons.php';
                 ?>
                 <h4>Page Category:</h4>
                 <?php session_start();
-                    $pageID=$_SESSION['page_ID'];
+                    $pageID=$_SESSION['pageID'];
+                    // echo $pageID;
                     $database = "SocialMedia";
                     $servername = "localhost";
                     $dataname = "root";
@@ -74,7 +76,7 @@ include_once 'all_icons.php';
                     ?>
                 <h4>Page Decription:</h4>
                 <?php session_start();
-                    $pageID=$_SESSION['page_ID'];
+                    $pageID=$_SESSION['pageID'];
                     $database = "SocialMedia";
                     $servername = "localhost";
                     $dataname = "root";

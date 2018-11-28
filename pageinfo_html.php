@@ -26,6 +26,7 @@ include_once 'all_icons.php';
                         $result = mysqli_query($conn, $mysql_query);
                         
                         $pageID=$_SESSION['pageID'];
+                        // echo $pageID;
                         
                         $mysql_query1 = "SELECT Admin_ID FROM Pages where Page_ID='$pageID'";
                         $result1 = mysqli_query($conn, $mysql_query1);

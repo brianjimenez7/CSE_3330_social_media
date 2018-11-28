@@ -39,7 +39,7 @@ include_once 'all_icons.php';
         <form method="post" action="pageinfo.php">
             <div class="input-group">
                 <label>Enter Page ID</label>
-                <input type="text" name="PageID">
+                <input type="text" name="Pageid">
             </div>
             <div class="input-group">
                 <button type="submit" name="register" class="btn">Submit</button>
